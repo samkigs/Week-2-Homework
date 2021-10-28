@@ -1,3 +1,33 @@
+let year = document.getElementbyId("year").value
+
+console.log(year)
+let date = document.getElementbyId("year")
+
+console.log(date)
+
+function getDate(){
+   let date = document.getElementById("year").value
+
+   let newDate = new Date(date);
+   
+   newDate.getYear()
+   
+
+
+   console.log(newDate.getFullYear())
+}
+// get date input
+// get gender input
+// separate and apply the formular return digit number between -0-6
+// convert our akan names into array
+// male ['Kwasi', 'Kwabena', 'Kwaku']
+// female ['Kwasi', 'Kwabena', 'Kwaku']
+/* if male */
+//use male array
+// male[0] = "Kwasi"
+// female
+//use female array
+// female[0] = "Kwasi"
 console.log("inafika")
 
 // dateControl.value = '2017-06-01';
@@ -6,6 +36,11 @@ function validate() {
 
     console.log("inafika function")
     var dateControl = document.querySelector('input[type="date"]').value;
+
+    //get gender input
+
+
+
     // var input = dateControl.value
     // var dateEntered = new Date(dateControl);
    // console.log(dateControl); //prints "2017-01"
