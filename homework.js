@@ -10,11 +10,15 @@ function getDate(){
 
    let newDate = new Date(date);
    
-   newDate.getYear()
+   let year = newDate.getFullYear()
+   let month = newDate.getMonth()
+   
    
 
 
    console.log(newDate.getFullYear())
+   let cc = year.slice(0,2)
+   console.log(cc)
 }
 // get date input
 // get gender input
@@ -28,14 +32,14 @@ function getDate(){
 // female
 //use female array
 // female[0] = "Kwasi"
-console.log("inafika")
+//console.log("inafika")
 
 // dateControl.value = '2017-06-01';
 
 function validate() {
 
     console.log("inafika function")
-    var dateControl = document.querySelector('input[type="date"]').value;
+    //var dateControl = document.querySelector('input[type="date"]').value;
 
     //get gender input
 
@@ -44,9 +48,11 @@ function validate() {
     // var input = dateControl.value
     // var dateEntered = new Date(dateControl);
    // console.log(dateControl); //prints "2017-01"
+
+
    // console.log(dateControl.valueAsNumber); // prin
 
-    console.log(dateEntered); // prin
+    //console.log(dateEntered); // prin
 
    // var year = dateEntered.getFullYear()
   //  var month = dateEntered.getMonth()
@@ -65,10 +71,24 @@ function validate() {
 
     //console.log(typeof CC)
     //console.log(Math.round(dayOfTheWeek))
-   // var d = parseInt((CC / 4 - 2 + CC - 1 + (5 + YY) / 4 + ))
+   // var d = parseInt((CC/4) - 2*CC - 1) + ((5*YY/4) / 4 + ))
    // console.log(dayOfTheWeek);
 
-   // var name = ["wed", "thur", "fri", "sat", "sun", "mon", "tue"]
+   var MaleNames = ["wed", "thur", "fri", "sat", "sun", "mon", "tue"]
+   var femaleNames = ["wed", "thur", "fri", "sat", "sun", "mon", "tue"]
 
+   if (gender === "male"){
+      var akanName = MaleNames[dayOfTheWeek]
+      console.log(akanName)
+   }
+   else if (gender === "female"){
+      var femaleAkan = femaleNames[dayOfTheWeek]
+      console.log(femaleAkan)
+
+   }
+   else{
+      console.log("too bad to choose a gender")
+   }
    // console.log(name[dayOfTheWeek]);
+   // alert (name[dayOfTheWeek]);
 }
