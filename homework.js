@@ -8,17 +8,17 @@ function validate(){
     // get user gender input from html form
    var gender = "male"
     // call the calculate day of the week function to get week day
-   var weekDay= calculateDayOfTheWeek(dateControl)
+   var dayOfTheWeek = calculateDayOfTheWeek(dateControl)
 
     // get akan name from day of week and gender
-    getAkan(weekDay, gender)
+    getAkan(dayOfTheWeek, gender)
 }
 
-   function calculateDayOfTheWeek(dateEntered){
+   function calculateDayOfTheWeek(dateObject){
 
     // convert the date to a date object
-    var dateObject = new Date(dateControl);  
-    console.log(dateControl); // prints "2017-06-01"
+    var dateObject = new Date(dateObject);  
+    console.log(dateObject); // prints "2017-06-01"
 
     // get year from date object
     var year = dateObject.getFullYear()
@@ -49,7 +49,7 @@ function validate(){
     var DD = day
     
     // apply formular to get day of week
-    var dayOfTheWeek = parseInt( ( (CC/4) -2*CC-1) + ((5*YY/4) )  + ((26*(MM+1)/10)) + DD ) % 7
+    var dayOfTheWeek = parseInt( ( (CC/4) -2*(CC-1)) + ((5*YY/4) )  + ((26*(MM+1)/10)) + DD ) % 7
     
     console.log(dayOfTheWeek);
 
@@ -59,23 +59,24 @@ function validate(){
  }
 
 
+ 
 
- function getAkan(weekDay, gender){
+ function getAkan(dayOfTheWeek,gender){
 
-    // add the akan name to arrays
-    var maleNames = ("wed", "thur", "fri", "sat", "sun", "mon", "tue")
-    var femaleNames = ("jumatatu", "jumanne", "jumatano", "alhamisi", "ijumaa", "jumamosi", "jumapili")
+    // add the akannames to arrays
+    var maleNames = ('Kwasi','Kwadwo','Kwabena','Kwaku','Yaw','Kofi','Kwame')
+    var femaleNames = ('Akosua','Adwoa','Abenaa','Akua','Yaa','Afua','Ama')
     
     // use male akan names if gender is male
     if (gender === "male"){
-        var akanName = maleNames[weekDay]
+        var akanName = maleNames [dayOfTheWeek]
         console.log(akanName)
         alert(akanName)
     
     }
     // use female akan names array if gender is female
     else if(gender === "female"){
-        var femaleAkan = femaleNames [weekDay]
+        var femaleAkan = femaleNames [dayOfTheWeek]
     
         console.log(femaleAkan)
         alert(femaleAkan)
